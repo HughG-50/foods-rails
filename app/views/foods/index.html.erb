@@ -1,4 +1,13 @@
 <% for food in @foods%>
-    <li> <%= food.name %> - <%= food.calories %> </li>
+    <li style="display: flex;"> 
+        <%= food.name %> - <%= food.calories %> 
+        <%# action=food_path(food.id) - did not work %>
+        <form action="/foods/<%=food.id%>" method="POST">
+            <input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token" />
+            <input type="hidden" name="_method" value="delete" />
+
+            <button type="submit">X</button>
+        </form>
+    </li>
 <% end %>
 

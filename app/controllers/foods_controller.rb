@@ -26,4 +26,8 @@ class FoodsController < ApplicationController
     def new 
 
     end
+
+    def edit 
+        @food = Food.find(params["id"])
+    end
 end

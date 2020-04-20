@@ -1,0 +1,13 @@
+<h1>Edit(Update) Food</h1>
+
+<form action="/foods/<%=@food.id%>" method="POST">
+    <input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token" />
+
+    <input type="hidden" name="_method" value="put" />
+
+    name: <input placeholder="name" type="text" name="name" value="<%= @food.name%>" />
+    <br>
+    calories: <input placeholder="calories" type="number" name="calories" value="<%= @food.calories%>"/>
+    <br>
+    <button type="submit">Submit</button>
+</form>
