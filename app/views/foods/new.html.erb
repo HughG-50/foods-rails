@@ -1,0 +1,10 @@
+<%# <form action="/foods" method="POST" > %>
+<%# the path for action MUST MATCH THE ROUTE FOR POST %>
+<form action="<%= foods_path %>" method="POST">
+        <input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token"/>
+        Food: <input type="text" name="name"/>
+        <br>
+        Calories: <input type="number" name="calories"/>
+        <br>
+        <button type="submit">Submit</button>
+</form>
